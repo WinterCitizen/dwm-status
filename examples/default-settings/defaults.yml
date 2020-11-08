@@ -1,36 +1,37 @@
 debug: false
-order: []
-separator: " / "
+order: [cpu_load, backlight, battery, audio, network, time]
+separator: "  "
 
 audio:
   control: Master
-  mute: MUTE
-  template: S {VOL}%
-  icons: []
+  mute: "ﱝ "
+  template: "{ICO} {VOL}%"
+  icons: ["奄", "奔", "墳"]
 
 backlight:
   device: intel_backlight
-  template: L {BL}%
-  icons: []
+  template: "{ICO} {BL}%"
+  icons: ["", "", ""]
 
 battery:
-  charging: ▲
-  discharging: ▼
+  charging: ""
+  discharging: ""
+  no_battery: ""
   enable_notifier: true
   no_battery: NO BATT
   notifier_critical: 10
   notifier_levels: [2, 5, 10, 15, 20]
   separator: " · "
-  icons: []
+  icons: ["", "", "", "", "", "", "", "", "", "", ""]
 
 cpu_load:
-  template: "{CL1} {CL5} {CL15}"
+  template: "{CL1}"
   update_interval: 20
 
 network:
   no_value: NA
-  template: "{IPv4} · {IPv6} · {ESSID}"
+  template: "{IPv4} · {ESSID}"
 
 time:
-  format: "%Y-%m-%d %H:%M"
-  update_seconds: false
+  format: "(%a) %Y-%m-%d %H:%M:%S"
+  update_seconds: true
